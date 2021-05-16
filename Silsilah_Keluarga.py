@@ -11,9 +11,6 @@ class Personal:
         self.saudaraKandung = [] # list dari objek saudara kandung personal
         self.saudaraTiri = [] # list dari objek saudara tiri personal
         self.saudaraSepupu = [] # list dari objek saudara sepupu personal
-        
-        
-    #===== INGET CEK NAMA PANGGILANNYA :)))
     
     
     def setAyah(self,ayah): # ayah = objeck dari personal
@@ -108,58 +105,33 @@ class Personal:
                 self.in_saudarasp = 1
         if (self.in_saudarasp == 0):
             sdr.saudaraSepupu.append(self)
-        
-        
-# Saudara kandung -> 
-#       Syaratnya : Ayah dan Ibunya harus sama
-# Saudara tiri ->
-#       Syaratnya : Ayahnya berbeda atau Ibunya berbeda
-# Saudara sepupu ->
-#       Syaratnya : Anak dari saudara ayah kandung maupun saudara ibu kandung
-# Cucu ->
-#       Syaratnya : Anak dari semua anak kandung
-# Mertua ->
-#       Syaratnya : Ayah atau Ibu dari suami/istri
-# Kakek ->
-#       Syaratnya : Ayah dari ayah kandung atau ibu kandung
-# Nenek ->
-#       Syaratnya : Ibu dari ayah kandung atau ibu kandung
-# Menantu ->
-#       Syaratnya : Suami atau istri dari anak kandung
-# Paman->
-#       Syaratnya : Saudara laki-laki dari ayah kandung atau ibu kandung    
-# Bibi ->
-#       Syaratnya : Saudara perempuan dari ayah kandung atau ibu kandung    
-# Ponakan ->
-#       Syaratnya : Anak dari saudara kandung istri atau suami
-# Ipar  ->
-#       Syaratnya : Saudara dari suami atau istri
+            
 
-sokel = Personal("Sokel", "L")
-dani = Personal("Dani", "P")
+sokel = Personal("Ketut Sokel", "L")
+dani = Personal("Wayan Dani", "P")
 
-sirtha = Personal("Sirtha", "L")
-suji = Personal("Suji", "P")
+sirtha = Personal("Ketut Sirtha", "L")
+suji = Personal("Ketut Suji", "P")
 
-sugiarta = Personal("Sugiarta", "L")
-widari = Personal("Ardi Widari", "P")
-prianka = Personal("Prianka", "P")
-ardhiya = Personal("Ardhiya", "P")
-luxtor = Personal("Luxtor", "L")
+sugiarta = Personal("Nyoman Sugiarta", "L")
+widari = Personal("Made Ardi Widari", "P")
+prianka = Personal("Putu Prianka", "P")
+ardhiya = Personal("Made Ardhiya", "P")
+luxtor = Personal("Nyoman Luxtor", "L")
 
-utu = Personal("Utu", "P")
+utu = Personal("Putu Arnariwati", "P")
 ketut = Personal("Ketut", "L")
-wira = Personal("Wira", "L")
-aris = Personal("Aris", "L")
+wira = Personal("Putu Wira", "L")
+aris = Personal("Made Aris", "L")
 
-arjana = Personal("Arjana", "L")
-sus = Personal("Sus", "P")
-leli = Personal("Leli", "P")
+arjana = Personal("Made Arjana", "L")
+sus = Personal("Bude Sus", "P")
+leli = Personal("Leliana", "P")
 made = Personal("Made", "L")
 intan = Personal("Intan", "P")
 
-deduk = Personal("Deduk", "L")
-ayu = Personal("Ayu", "P")
+kuta = Personal("Made Kuta", "L")
+ayu = Personal("Ketut Ayu", "P")
 radha = Personal("Radha", "P")
 dana = Personal("Dana", "L")
 
@@ -197,9 +169,9 @@ sus.setAnak(made)
 sus.setAnak(intan)
 
 '''========================================================='''
-deduk.setIstri(ayu)
-deduk.setAnak(radha)
-deduk.setAnak(dana)
+kuta.setIstri(ayu)
+kuta.setAnak(radha)
+kuta.setAnak(dana)
 
 ayu.setAnak(radha)
 ayu.setAnak(dana)
@@ -208,10 +180,10 @@ ayu.setAnak(dana)
 '''++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'''
 '''======================== KELUARGA BESAR =========================='''
 sokel.setIstri(dani)
-sokel.setAnak(deduk)
+sokel.setAnak(kuta)
 sokel.setAnak(sugiarta)
 
-dani.setAnak(deduk)
+dani.setAnak(kuta)
 dani.setAnak(sugiarta)
 
 sirtha.setIstri(suji)
@@ -226,7 +198,7 @@ suji.setAnak(arjana)
 widari.setSaudaraKandung(utu)
 widari.setSaudaraKandung(arjana)
 
-sugiarta.setSaudaraKandung(deduk)
+sugiarta.setSaudaraKandung(kuta)
 
 ardhiya.setSaudaraSepupu(wira)
 ardhiya.setSaudaraSepupu(aris)
@@ -361,18 +333,3 @@ print("")
 # for saudara in ardhiya.saudaraTiri:
 #     print(" (saudara tiri)", saudara.nama)
 # print("")
-
-# print("Saudara kandung", prianka.nama, "adalah : ")
-# for saudara in prianka.saudaraKandung:
-#     print(" (saudara kandung)", saudara.nama)
-# print("")
-
-# print("Saudara kandung", luxtor.nama, "adalah : ")
-# for saudara in luxtor.saudaraKandung:
-#     print(" (saudara kandung)", saudara.nama)
-# print("")        
-
-# print("Tante dari", wira.nama, "adalah : ")
-# for saudara in wira.ibu.saudaraKandung:
-#     print(" (saudara kandung)", saudara.nama)
-# print("")  
